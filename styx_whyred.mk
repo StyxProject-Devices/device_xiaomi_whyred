@@ -28,11 +28,14 @@ $(call inherit-product, device/xiaomi/whyred/device.mk)
 # Inherit from custom vendor
 $(call inherit-product-if-exist, vendor/MiuiCamera/config.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common styx stuff.
+$(call inherit-product, vendor/styx/config/common.mk)
 
-DEVICE_MAINTAINER := Sreekanth
-PRODUCT_NAME := arrow_whyred
+# Inherit some common styx flags
+STYX_BUILD_TYPE := OFFICIAL
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_NAME := styx_whyred
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi
