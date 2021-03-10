@@ -37,6 +37,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += device/xiaomi/whyred
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
