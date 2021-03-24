@@ -24,7 +24,7 @@
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
 
 # Vendor properties
--include $(LOCAL_PATH)/vendor_prop.mk
+include $(LOCAL_PATH)/vendor_prop.mk
 
 # Dirac
 $(call inherit-product, vendor/xiaomi/whyred/dirac/dirac.mk)
@@ -34,10 +34,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/xiaomi/whyred
-PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -91,13 +87,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
-
-# Alipay
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -524,7 +513,7 @@ PRODUCT_PACKAGES += \
     libmediaextractorservice \
     libnl
 
-#PRODUCT_BOOT_JARS += \
+PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Allow debug
@@ -545,3 +534,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOARD_PLATFORM := sdm660
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
